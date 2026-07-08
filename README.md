@@ -85,7 +85,7 @@ public/
 - Shared branding across home, services, about, contact, and projects pages
 - Construction capability overview page built around the supplied logo artwork
 - Quote request form that opens a prefilled email draft
-- Static Next.js export ready for deployment
+- Ready for standalone deployment on Vercel
 
 ## Customization
 
@@ -96,17 +96,13 @@ public/
 
 ## Deploy
 
-This project is ready to deploy on:
-- [Vercel](https://vercel.com) — Recommended (Next.js creators)
-- [Netlify](https://netlify.com)
-- Any Node.js hosting provider
+This project is configured as a standalone Crown Construction website and is intended to deploy separately from the Warner Built site.
 
-### Deploy to Vercel
+### Vercel
 
-```bash
-npm install -g vercel
-vercel
-```
+- Recommended hosting target for this repo
+- Deploy from the standalone GitHub repository: `warnerbuilt1-gif/crown-construction-website`
+- Local production check: `npm run build`
 
 ## Contact
 
