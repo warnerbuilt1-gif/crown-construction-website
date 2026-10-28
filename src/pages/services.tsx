@@ -1,31 +1,12 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { SERVICES, SITE_LEGAL_NAME, SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from '../config/site'
 
 export default function Services(){
-  const services = [
-    {
-      title: "Site Prep & Cleanup",
-      description: "Initial clearing, debris haul-off, cleanup, and general field support to get a property ready for the next phase of work."
-    },
-    {
-      title: "Framing & Exterior Support",
-      description: "Practical labor support for small builds, repairs, punch-list work, and exterior construction projects that need a reliable crew."
-    },
-    {
-      title: "Equipment Access Work",
-      description: "Lift-assisted and equipment-backed job support for hard-to-reach areas, elevated work, and faster on-site execution."
-    },
-    {
-      title: "Demolition & Tear-Out",
-      description: "Selective demolition, tear-out, and disposal handled with attention to safety, sequencing, and site cleanliness."
-    },
-    {
-      title: "General Project Support",
-      description: "Extra hands for fast-moving jobs where scheduling, materials, cleanup, and follow-through matter just as much as the final finish."
-    }
-  ]
+  const services = SERVICES
 
   const [activeIndex, setActiveIndex] = useState(0)
   const [progress, setProgress] = useState(0)
@@ -118,7 +99,7 @@ export default function Services(){
   return (
     <>
       <Head>
-        <title>Services — Crown Construction</title>
+        <title>{`Services | ${SITE_LEGAL_NAME}`}</title>
       </Head>
       <Header />
       <section
@@ -150,10 +131,14 @@ export default function Services(){
             ))}
           </div>
 
-          <div className="showcase-right reveal" key={activeService.title}>
-            <div className="service-copy fade-glide reveal">
+          <div className="showcase-right" key={activeService.title}>
+            <div className="service-copy fade-glide">
               <h4>{activeService.title}</h4>
               <p>{activeService.description}</p>
+              <div className="hero-actions mt-6">
+                <a href={SITE_PHONE_TEL} className="inline-block rounded-full bg-wood px-5 py-3 font-semibold text-[#120f0d]">Call {SITE_PHONE_DISPLAY}</a>
+                <Link href="/contact" className="inline-block rounded-full border border-white/30 px-5 py-3 font-semibold text-white">Request a quote</Link>
+              </div>
             </div>
           </div>
         </section>

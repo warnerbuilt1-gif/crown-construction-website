@@ -1,8 +1,10 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { useEffect } from 'react'
 import Image from 'next/image'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { SITE_LEGAL_NAME, SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from '../config/site'
 
 export default function Gallery(){
   const projectStories = [
@@ -123,7 +125,7 @@ export default function Gallery(){
   return (
     <>
       <Head>
-        <title>Projects — Crown Construction</title>
+        <title>{`Recent Work | ${SITE_LEGAL_NAME}`}</title>
       </Head>
       <Header />
       <section className="gallery-forest-wrap" aria-label="Project gallery">
@@ -132,7 +134,7 @@ export default function Gallery(){
             <div className="gallery-brand-copy">
               <p className="services-eyebrow">Portfolio</p>
               <h1 className="gallery-heading">Recent Work</h1>
-              <p className="services-intro">A curated look at actual Crown Construction field work, including mountain foundations, waterproofing, slab pours, exterior progress, and civic flatwork details.</p>
+              <p className="services-intro">Mountain foundations, waterproofing, slabs, and flatwork from {SITE_LEGAL_NAME}. If the job looks like this, call and Neal will price yours.</p>
             </div>
             <div className="gallery-brand-media">
               <Image
@@ -206,6 +208,15 @@ export default function Gallery(){
                   <figcaption>{photo.caption}</figcaption>
                 </figure>
               ))}
+            </div>
+          </section>
+
+          <section className="mx-auto mt-10 max-w-3xl rounded-[28px] border border-white/15 bg-black/40 px-6 py-10 text-center">
+            <h2 className="text-2xl text-white">Have a lot that looks like this?</h2>
+            <p className="mt-2 text-stone-200">Send the town, the work, and a photo. Neal walks it and prices it.</p>
+            <div className="mt-5 flex flex-wrap justify-center gap-3">
+              <a href={SITE_PHONE_TEL} className="inline-block rounded-full bg-wood px-6 py-3 font-semibold text-[#120f0d]">Call {SITE_PHONE_DISPLAY}</a>
+              <Link href="/contact" className="inline-block rounded-full border border-white/30 px-6 py-3 font-semibold text-white">Request a quote</Link>
             </div>
           </section>
         </main>

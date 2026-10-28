@@ -1,77 +1,74 @@
 import Head from 'next/head'
-import { useEffect } from 'react'
-
+import Link from 'next/link'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+import {
+  SITE_ADDRESS,
+  SITE_CITY,
+  SITE_ESTABLISHED,
+  SITE_LEGAL_NAME,
+  SITE_MAP_LINK,
+  SITE_NAME,
+  SITE_OWNER,
+  SITE_PHONE_DISPLAY,
+  SITE_PHONE_TEL,
+  SITE_RENTALS_URL,
+  SITE_SERVICE_AREA,
+} from '../config/site'
 
 export default function About() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active')
-          }
-        })
-      },
-      { threshold: 0.18 }
-    )
-
-    const revealElements = document.querySelectorAll('.reveal')
-    revealElements.forEach((element) => observer.observe(element))
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <>
       <Head>
-        <title>About | Crown Construction</title>
+        <title>{`About ${SITE_OWNER} | ${SITE_LEGAL_NAME}`}</title>
         <meta
           name="description"
-          content="Learn about Crown Construction and the practical, equipment-ready approach behind every project."
+          content={`${SITE_LEGAL_NAME} is ${SITE_OWNER}'s construction company in ${SITE_CITY}, Montana. Foundations, slabs, flatwork, and site work since ${SITE_ESTABLISHED}.`}
         />
       </Head>
       <Header />
-
       <main>
         <section className="about-forest-wrap">
           <div className="about-shell">
-            <div className="about-info reveal">
-              <h1 className="about-heading">About Us</h1>
+            <div className="about-info reveal active">
+              <h1 className="about-heading">About {SITE_NAME}</h1>
               <p className="about-body">
-                Crown Construction is positioned as a local, hands-on contractor focused on practical project support,
-                clean job sites, and dependable follow-through. The brand direction pulls from the supplied Crown logo:
-                black, copper, strong geometry, and equipment-forward presentation.
+                {SITE_LEGAL_NAME} is {SITE_OWNER}&apos;s company in {SITE_CITY}. He has been building here since {SITE_ESTABLISHED}. The work is foundations, footings, slabs, waterproofing, and the site prep that has to happen before a house or a pad can go in.
               </p>
               <p className="about-body">
-                This site is structured to present a crew that can step into prep work, light construction,
-                demolition, cleanup, and equipment-supported field tasks without overcomplicating the message.
+                Recent field work includes mountain foundation walls, finished slabs, and flatwork in town. Public work includes a parking area at Lookout Pass for the Lolo National Forest. If you need the machine and not the crew, the same phone rents it at <a href={SITE_RENTALS_URL}>Crown Rentals</a>.
+              </p>
+              <p className="about-body">
+                Shop: {SITE_ADDRESS}. Serving {SITE_SERVICE_AREA}.
+              </p>
+              <p className="about-body">
+                <a href={SITE_PHONE_TEL}>{SITE_PHONE_DISPLAY}</a>
+                {' · '}
+                <a href={SITE_MAP_LINK} target="_blank" rel="noreferrer">Map</a>
               </p>
             </div>
-
-            <div className="about-card reveal">
+            <div className="about-card reveal active">
               <div className="about-card-copy">
                 <label className="form-field">
-                  <span>Clear Scope</span>
-                  <p>Built for owners who want straight answers about pricing, timing, and what gets handled on site.</p>
+                  <span>You talk to Neal</span>
+                  <p>The estimate comes from the person who walks the site. No office handoff and no number that changes after the bid.</p>
                 </label>
                 <label className="form-field">
-                  <span>Clean Process</span>
-                  <p>The visual system and copy both reinforce a clean handoff, organized work areas, and accountable project support.</p>
+                  <span>The ground decides the price</span>
+                  <p>Slope, access, and what is already in the way are part of the number. Send photos if you want a first look before a site visit.</p>
                 </label>
                 <label className="form-field">
-                  <span>Flexible Positioning</span>
-                  <p>
-                    You can refine this version further toward rentals, excavation, remodeling, or general contracting once you decide how narrow the Crown brand should be.
-                  </p>
+                  <span>The site gets left workable</span>
+                  <p>Forms, spoil, and trash come off the pad so the next trade is not cleaning up before they can start.</p>
                 </label>
+                <Link href="/contact" className="inline-block rounded-full bg-wood px-6 py-3 font-semibold text-[#120f0d]">
+                  Request a quote
+                </Link>
               </div>
             </div>
           </div>
         </section>
       </main>
-
       <Footer />
     </>
   )
