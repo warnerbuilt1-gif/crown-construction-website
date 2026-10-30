@@ -1,5 +1,11 @@
 export const SITE_NAME = 'Crown Construction'
 export const SITE_LEGAL_NAME = 'Crown Construction of Montana'
+export const SITE_SLOGAN = 'Built from the ground up.'
+export const SITE_CREDENTIALS = [
+  'Licensed & Insured',
+  'Commercial Construction',
+  'Government Bidding',
+] as const
 export const SITE_OWNER = 'Neal Warner'
 export const SITE_OWNER_SHORT = 'Neal'
 export const SITE_PHONE_DISPLAY = '(406) 595-4472'
@@ -45,21 +51,21 @@ export const SERVICES = [
 
 export const PROJECTS = [
   {
-    title: 'Mountain foundation',
-    copy: 'Formed walls, steel, and waterproofing on a forested hillside.',
-    image: '/portfolio/foundation-wall-overview.jpg',
-    alt: 'Concrete foundation walls on a mountain lot in Southwest Montana',
+    title: 'Retaining wall',
+    copy: 'Block wall curving along the grade beside the house.',
+    image: '/portfolio/retaining-wall-curve.jpg',
+    alt: 'Curved block retaining wall under construction along a house',
   },
   {
-    title: 'Slab on grade',
-    copy: 'A long residential pour with the forms still on and the finish closed.',
-    image: '/portfolio/slab-finish.jpg',
-    alt: 'Fresh concrete slab with rebar dowels on a sloped lot',
+    title: 'Patio wall',
+    copy: 'Finished stone wall with a poured cap on a residential lot.',
+    image: '/portfolio/patio-stone-wall.jpg',
+    alt: 'Finished curved stone retaining wall and concrete patio beside a house',
   },
   {
-    title: 'Civic flatwork',
-    copy: 'Pad and finish work set against an existing downtown building.',
-    image: '/portfolio/library-clock-pad.jpg',
-    alt: 'Concrete flatwork pad in front of a historic library',
+    title: 'Hearst Library plaza',
+    copy: 'Plaza work in front of the Hearst Free Library in Anaconda.',
+    image: '/portfolio/hearst-library-plaza.jpg',
+    alt: 'Phoebe Apperson Hearst statue on the plaza in front of a brick library',
   },
 ] as const

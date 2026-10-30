@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useEffect, useId, useRef, useState } from 'react'
-import { SITE_LEGAL_NAME, SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from '../config/site'
+import { SITE_CREDENTIALS, SITE_PHONE_DISPLAY, SITE_PHONE_TEL, SITE_SLOGAN } from '../config/site'
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -61,16 +61,20 @@ export default function Header() {
   return (
     <header className="site-header w-full border-b border-stone-800 bg-[#0c0c0e] text-stone-100 shadow-[0_16px_40px_rgba(0,0,0,0.28)]">
       <div className="max-w-6xl mx-auto p-3 sm:p-4">
-        <div className="flex items-center justify-between gap-3">
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
-            <Image src="/crown-mark.svg" alt="" width={44} height={44} className="rounded-2xl" />
-            <div className="min-w-0">
-              <p className="text-base sm:text-lg font-bold uppercase tracking-[0.14em] truncate text-stone-100">Crown Construction</p>
-              <p className="text-xs sm:text-sm text-stone-400 truncate">{SITE_LEGAL_NAME}</p>
-            </div>
+        <div className="header-brand-row">
+          <Link href="/" className="header-brand">
+            <Image
+              src="/crown-logo.jpg"
+              alt="Crown Construction"
+              width={840}
+              height={632}
+              priority
+              className="header-logo"
+            />
+            <p className="header-slogan">{SITE_SLOGAN}</p>
           </Link>
 
-          <div className="flex items-center gap-2">
+          <div className="header-actions">
             <a
               href={SITE_PHONE_TEL}
               className="inline-flex min-h-11 shrink-0 items-center rounded-full bg-wood px-3 py-2 text-xs sm:px-4 sm:text-sm font-semibold text-[#120f0d]"
@@ -90,6 +94,12 @@ export default function Header() {
             </button>
           </div>
         </div>
+
+        <ul className="credential-lines">
+          {SITE_CREDENTIALS.map((line) => (
+            <li key={line}>{line}</li>
+          ))}
+        </ul>
 
         <nav className="desktop-nav mt-3 flex flex-wrap gap-2" aria-label="Primary">
           {navItems.map((item) => (

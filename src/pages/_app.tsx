@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Crown Construction of Montana in Anaconda. Neal Warner builds foundations, slabs, flatwork, and site work. Call (406) 595-4472." />
-        <link rel="icon" href="/crown-mark.svg" />
+        <link rel="icon" href="/crown-favicon.png" />
         <title>Crown Construction of Montana</title>
         <script
           type="application/ld+json"

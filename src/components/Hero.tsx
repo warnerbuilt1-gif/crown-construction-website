@@ -47,15 +47,15 @@ export default function Hero() {
         <div className="hero-visual flex-1">
           <div className="hero-logo-panel">
             <Image
-              src="/portfolio/foundation-wall-overview.jpg"
-              alt="Foundation walls Crown Construction formed on a mountain lot"
-              width={1600}
-              height={1200}
+              src="/portfolio/foundation-layout-aerial.jpg"
+              alt="Aerial view of a formed foundation layout on a graded lot"
+              width={2048}
+              height={1365}
               priority
               sizes="(max-width: 768px) 86vw, 680px"
               className="hero-logo"
             />
-            <p className="hero-photo-caption">Mountain foundation · Southwest Montana</p>
+            <p className="hero-photo-caption">Foundation layout · Southwest Montana</p>
           </div>
         </div>
       </div>
