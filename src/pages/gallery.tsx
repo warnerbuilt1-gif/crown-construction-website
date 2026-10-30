@@ -9,51 +9,48 @@ import { SITE_LEGAL_NAME, SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from '../config/s
 export default function Gallery(){
   const projectStories = [
     {
-      id: 1,
-      title: 'Mountain Foundation & Waterproofing',
-      description: 'An uphill custom residential foundation showing excavation, reinforcing, formed work, foundation walls, and waterproofing details across multiple stages.',
-      image: '/portfolio/foundation-wall-overview.jpg',
-      alt: 'Large mountain foundation wall system under construction',
-      details: [
-        'Excavation, wall forms, and reinforced concrete work',
-        'Waterproofing and drainage detailing around the perimeter',
-        'Field-ready execution on steep mountain terrain',
-      ],
-      supporting: [
-        '/portfolio/footing-layout.jpg',
-        '/portfolio/waterproofing-detail.jpg',
-      ],
-    },
-    {
-      id: 2,
-      title: 'Residential Slab & Exterior Progress',
-      description: 'Concrete slab completion and exterior site coordination captured alongside the surrounding residence and access work.',
-      image: '/portfolio/slab-finish.jpg',
-      alt: 'Finished residential slab with equipment and home in the background',
-      details: [
-        'Finished slab surface and clean perimeter edges',
-        'Coordinated work around equipment access and active site conditions',
-        'Residential project support from structure to exterior finish stages',
-      ],
-      supporting: [
-        '/portfolio/residential-exterior.jpg',
-        '/portfolio/retaining-wall-layout.jpg',
-      ],
-    },
-    {
-      id: 3,
-      title: 'Civic Flatwork & Site Detail',
-      description: 'Flatwork and site detail around the historic library clock plaza, showing both close craftsmanship and wider site context.',
+      id: 'hearst-library',
+      title: 'Hearst Library plaza',
+      town: 'Anaconda',
+      description: 'Public flatwork in front of an existing civic building.',
+      challenge: 'The pad had to meet the building and the plaza, not a blank lot.',
+      approach: 'Neal walked the grade, formed the pad to the existing edges, and finished the flatwork in place.',
+      result: 'A finished plaza surface the library could open onto.',
       image: '/portfolio/library-clock-pad.jpg',
       alt: 'Concrete flatwork pad in front of the historic library building',
-      details: [
-        'Clean pad formwork and finished flatwork in a public-facing area',
-        'Attention to alignment, surrounding landscape, and existing architecture',
-        'Strong fit for civic, commercial, and detail-oriented exterior work',
-      ],
       supporting: [
         '/portfolio/library-clock-close.jpg',
-        '/portfolio/rebar-detail.jpg',
+        '/portfolio/hearst-library-plaza.jpg',
+      ],
+    },
+    {
+      id: 'retaining-wall',
+      title: 'Retaining wall',
+      town: 'Southwest Montana',
+      description: 'A house lot where the grade dropped beside the building.',
+      challenge: 'The wall had to follow the curve and hold the yard.',
+      approach: 'Layout along the slope, then a block wall with a poured cap.',
+      result: 'A wall the house and yard can sit against.',
+      image: '/portfolio/retaining-wall-curve.jpg',
+      alt: 'Curved block retaining wall under construction along a house',
+      supporting: [
+        '/portfolio/retaining-wall-layout.jpg',
+        '/portfolio/footing-curve.jpg',
+      ],
+    },
+    {
+      id: 'patio-wall',
+      title: 'Patio wall',
+      town: 'Southwest Montana',
+      description: 'A residential patio that needed a finished edge.',
+      challenge: 'The patio needed a finished edge, not an open cut beside the house.',
+      approach: 'Stone wall with a poured cap, built to the house.',
+      result: 'A usable patio with a finished wall.',
+      image: '/portfolio/patio-stone-wall.jpg',
+      alt: 'Finished curved stone retaining wall and concrete patio beside a house',
+      supporting: [
+        '/portfolio/residential-exterior.jpg',
+        '/portfolio/slab-finish.jpg',
       ],
     },
   ]
@@ -133,8 +130,8 @@ export default function Gallery(){
           <div className="gallery-brand-card gallery-reveal">
             <div className="gallery-brand-copy">
               <p className="services-eyebrow">Portfolio</p>
-              <h1 className="gallery-heading">Recent Work</h1>
-              <p className="services-intro">Mountain foundations, waterproofing, slabs, and flatwork from {SITE_LEGAL_NAME}. If the job looks like this, call and Neal will price yours.</p>
+              <h1 className="gallery-heading">Portfolio</h1>
+              <p className="services-intro">Foundations, commercial work, and public flatwork from {SITE_LEGAL_NAME}. If the job looks like this, Neal will walk yours.</p>
             </div>
             <div className="gallery-brand-media">
               <Image
@@ -150,7 +147,7 @@ export default function Gallery(){
 
           <div className="portfolio-story-stack">
             {projectStories.map((story) => (
-              <article key={story.id} className="portfolio-story gallery-reveal">
+              <article key={story.id} id={story.id} className="portfolio-story gallery-reveal">
                 <div className="portfolio-story-media">
                   <Image
                     src={story.image}
@@ -162,20 +159,20 @@ export default function Gallery(){
                   />
                 </div>
                 <div className="portfolio-story-copy">
-                  <span className="gallery-pillar-index">0{story.id}</span>
+                  <p className="services-eyebrow">{story.town}</p>
                   <h2>{story.title}</h2>
-                  <p>{story.description}</p>
-                  <ul className="portfolio-story-list">
-                    {story.details.map((detail) => (
-                      <li key={detail}>{detail}</li>
-                    ))}
-                  </ul>
+                  <h3>The challenge</h3>
+                  <p>{story.challenge}</p>
+                  <h3>Our approach</h3>
+                  <p>{story.approach}</p>
+                  <h3>The result</h3>
+                  <p>{story.result}</p>
                   <div className="portfolio-support-grid">
                     {story.supporting.map((src) => (
                       <div key={src} className="portfolio-support-card">
                         <Image
                           src={src}
-                          alt={story.title}
+                          alt=""
                           width={900}
                           height={1200}
                           sizes="(max-width: 900px) 100vw, 20vw"
@@ -184,6 +181,9 @@ export default function Gallery(){
                       </div>
                     ))}
                   </div>
+                  <Link href={`/contact/?job=${encodeURIComponent(story.title)}`} className="inline-block mt-4 rounded-full bg-wood px-5 py-3 font-semibold text-[#120f0d]">
+                    Get a consultation for a job like this
+                  </Link>
                 </div>
               </article>
             ))}
@@ -191,8 +191,8 @@ export default function Gallery(){
 
           <section className="portfolio-grid-wrap gallery-reveal" aria-labelledby="field-photos-heading">
             <div className="portfolio-grid-header">
-              <p className="services-eyebrow">Field Photos</p>
-              <h2 id="field-photos-heading" className="gallery-heading">Jobsite Highlights</h2>
+              <p className="services-eyebrow">Field photos</p>
+              <h2 id="field-photos-heading" className="gallery-heading">Field photos</h2>
             </div>
             <div className="portfolio-grid">
               {fieldPhotos.map((photo) => (
@@ -216,7 +216,7 @@ export default function Gallery(){
             <p className="mt-2 text-stone-200">Send the town, the work, and a photo. Neal walks it and prices it.</p>
             <div className="mt-5 flex flex-wrap justify-center gap-3">
               <a href={SITE_PHONE_TEL} className="inline-block rounded-full bg-wood px-6 py-3 font-semibold text-[#120f0d]">Call {SITE_PHONE_DISPLAY}</a>
-              <Link href="/contact" className="inline-block rounded-full border border-white/30 px-6 py-3 font-semibold text-white">Request a quote</Link>
+              <Link href="/contact" className="inline-block rounded-full border border-white/30 px-6 py-3 font-semibold text-white">Get a consultation</Link>
             </div>
           </section>
         </main>

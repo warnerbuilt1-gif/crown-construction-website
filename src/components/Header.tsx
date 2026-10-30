@@ -7,7 +7,7 @@ import { SITE_CREDENTIALS, SITE_PHONE_DISPLAY, SITE_PHONE_TEL, SITE_SLOGAN } fro
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
-  { href: '/gallery', label: 'Gallery' },
+  { href: '/gallery', label: 'Portfolio' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ]

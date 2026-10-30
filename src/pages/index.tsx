@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
-import { PROJECTS, SERVICES, SITE_DESCRIPTION, SITE_NAME, SITE_OWNER, SITE_PHONE_DISPLAY, SITE_PHONE_TEL, SITE_SERVICE_AREA } from '../config/site'
+import { PROJECTS, SERVICES, SERVICE_TOWNS, SITE_DESCRIPTION, SITE_NAME, SITE_OWNER, SITE_PHONE_DISPLAY, SITE_PHONE_TEL, SITE_SERVICE_AREA } from '../config/site'
 
 const homeServices = SERVICES.slice(0, 3)
 
@@ -46,7 +46,15 @@ export default function Home() {
               <p className="services-eyebrow">What we build</p>
               <h2 id="services-heading" className="services-title">Work that holds up after we leave</h2>
               <p className="services-intro">
-                Foundations, slabs, and the site work around them for homeowners and builders in {SITE_SERVICE_AREA}. If the job is the iron and not the crew, the same phone rents it at Crown Rentals.
+                Foundations, slabs, and the site work around them for homeowners and builders in {SITE_SERVICE_AREA}.
+              </p>
+              <p className="mt-3 text-sm">
+                {SERVICE_TOWNS.map((town, index) => (
+                  <span key={town.slug}>
+                    <Link href={town.path} className="text-wood underline">{town.city}</Link>
+                    {index < SERVICE_TOWNS.length - 1 ? ' · ' : ''}
+                  </span>
+                ))}
               </p>
             </div>
             <div className="services-grid">
@@ -66,13 +74,14 @@ export default function Home() {
         <section className="mx-auto mt-8 max-w-6xl px-6" aria-labelledby="work-heading">
           <p className="services-eyebrow">On the ground</p>
           <h2 id="work-heading" className="text-3xl font-semibold uppercase tracking-[0.06em]">Recent work</h2>
-          <p className="max-w-2xl">Photos from jobs already in the ground. Foundations, slabs, and flatwork. Public work includes a parking area at Lookout Pass for the Lolo National Forest.</p>
+          <p className="max-w-2xl">Three jobs from the ground we have already built. Each one starts with the problem on the lot and ends with a site the next trade can use.</p>
           <div className="work-grid mt-6">
             {PROJECTS.map((project) => (
-              <Link href="/gallery" className="work-card" key={project.title}>
+              <Link href={`/gallery/#${project.id}`} className="work-card" key={project.id}>
                 <Image src={project.image} alt={project.alt} width={1200} height={900} />
                 <div>
-                  <strong>{project.title}</strong>
+                  <strong>{project.town}</strong>
+                  <span>{project.title}</span>
                   <span>{project.copy}</span>
                 </div>
               </Link>
@@ -116,8 +125,8 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-6 flex flex-col justify-center gap-4 text-sm md:flex-row">
-            <Link href="/gallery" className="text-wood underline">See the work</Link>
-            <Link href="/contact" className="text-wood underline">Send the job details</Link>
+            <Link href="/gallery" className="text-wood underline">View our portfolio</Link>
+            <Link href="/contact" className="text-wood underline">Get a consultation</Link>
           </div>
         </section>
       </main>

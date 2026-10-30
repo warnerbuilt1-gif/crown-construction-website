@@ -5,7 +5,7 @@ export default function MobileCallBar() {
   return (
     <div className="mobile-call-bar" aria-label="Quick contact">
       <a href={SITE_PHONE_TEL}>Call {SITE_PHONE_DISPLAY}</a>
-      <Link href="/contact">Get a quote</Link>
+      <Link href="/contact">Get a consultation</Link>
     </div>
   )
 }

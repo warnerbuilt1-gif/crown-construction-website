@@ -58,8 +58,7 @@ p {
 
 .hero-gradient {
   background:
-    radial-gradient(circle at top right, rgba(200, 141, 103, 0.2), transparent 28%),
-    linear-gradient(160deg, rgba(24, 24, 27, 0.9), rgba(9, 9, 11, 0.88)),
+    linear-gradient(100deg, rgba(9, 9, 11, 0.94) 0%, rgba(9, 9, 11, 0.86) 48%, rgba(9, 9, 11, 0.55) 100%),
     url('/portfolio/foundation-layout-aerial.jpg');
   background-size: cover;
   background-position: center;
@@ -83,6 +82,23 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
+}
+
+.hero-actions a {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions a {
+    width: 100%;
+  }
 }
 
 .hero-action-secondary {

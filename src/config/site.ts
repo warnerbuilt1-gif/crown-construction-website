@@ -51,21 +51,43 @@ export const SERVICES = [
 
 export const PROJECTS = [
   {
+    id: 'hearst-library',
+    title: 'Hearst Library plaza',
+    town: 'Anaconda',
+    copy: 'A finished plaza the library can open onto.',
+    challenge: 'Public flatwork in front of an existing civic building. The pad had to meet the building and the plaza, not a blank lot.',
+    approach: 'Neal walked the grade, formed the pad to the existing edges, and finished the flatwork in place.',
+    result: 'A finished plaza surface the library could open onto.',
+    image: '/portfolio/hearst-library-plaza.jpg',
+    alt: 'Phoebe Apperson Hearst statue on the plaza in front of a brick library',
+  },
+  {
+    id: 'retaining-wall',
     title: 'Retaining wall',
-    copy: 'Block wall curving along the grade beside the house.',
+    town: 'Southwest Montana',
+    copy: 'A wall the house and yard can sit against.',
+    challenge: 'The grade dropped beside the house. The wall had to follow the curve and hold the yard.',
+    approach: 'Layout along the slope, then a block wall with a poured cap.',
+    result: 'A wall the house and yard can sit against.',
     image: '/portfolio/retaining-wall-curve.jpg',
     alt: 'Curved block retaining wall under construction along a house',
   },
   {
+    id: 'patio-wall',
     title: 'Patio wall',
-    copy: 'Finished stone wall with a poured cap on a residential lot.',
+    town: 'Southwest Montana',
+    copy: 'A usable patio with a finished wall.',
+    challenge: 'The patio needed a finished edge, not an open cut beside the house.',
+    approach: 'Stone wall with a poured cap, built to the house.',
+    result: 'A usable patio with a finished wall.',
     image: '/portfolio/patio-stone-wall.jpg',
     alt: 'Finished curved stone retaining wall and concrete patio beside a house',
   },
-  {
-    title: 'Hearst Library plaza',
-    copy: 'Plaza work in front of the Hearst Free Library in Anaconda.',
-    image: '/portfolio/hearst-library-plaza.jpg',
-    alt: 'Phoebe Apperson Hearst statue on the plaza in front of a brick library',
-  },
+] as const
+
+export const SERVICE_TOWNS = [
+  { slug: 'anaconda', city: 'Anaconda', path: '/foundations-anaconda-mt/' },
+  { slug: 'butte', city: 'Butte', path: '/foundations-butte-mt/' },
+  { slug: 'deer-lodge', city: 'Deer Lodge', path: '/foundations-deer-lodge-mt/' },
+  { slug: 'philipsburg', city: 'Philipsburg', path: '/foundations-philipsburg-mt/' },
 ] as const
