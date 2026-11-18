@@ -74,6 +74,10 @@ const photos = [
   },
 ]
 
+const priceNote = '' // [PLACEHOLDER: your price difference between an ICF wall and a conventional poured wall.]
+const scheduleNote = '' // [PLACEHOLDER: typical days or weeks for an ICF foundation on your jobs.]
+const icfSpecs = '' // [PLACEHOLDER: ICF brand, wall thickness, or sizes to name.]
+
 const faqs = [
   {
     question: 'What is ICF?',
@@ -83,12 +87,14 @@ const faqs = [
   {
     question: 'How does ICF cost compare to poured walls?',
     answer:
-      'An ICF wall is poured concrete with the insulation already in place. A conventional poured wall is the concrete, and insulation is a separate step. [PLACEHOLDER: your price difference between an ICF wall and a conventional poured wall.]',
+      'An ICF wall is poured concrete with the insulation already in place. A conventional poured wall is the concrete, and insulation is a separate step.',
+    note: priceNote,
   },
   {
     question: 'How long does an ICF foundation take?',
     answer:
-      'The pour is one placement after the forms are stacked. Excavation, steel, inspection, and backfill still take the time the site needs. [PLACEHOLDER: typical days or weeks for an ICF foundation on your jobs.]',
+      'The pour is one placement after the forms are stacked. Excavation, steel, inspection, and backfill still take the time the site needs.',
+    note: scheduleNote,
   },
   {
     question: 'Do you work with my builder?',
@@ -96,6 +102,10 @@ const faqs = [
       'Yes. Crown Construction builds ICF foundations for builders, and for commercial and public projects in Anaconda, Butte, and Southwest Montana. Send the plans through the quote page and Neal will price the foundation.',
   },
 ]
+
+function faqText(item: { answer: string; note?: string }) {
+  return item.note ? `${item.answer} ${item.note}` : item.answer
+}
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -105,7 +115,7 @@ const faqSchema = {
     name: item.question,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: item.answer,
+      text: faqText(item),
     },
   })),
 }
@@ -150,7 +160,7 @@ export default function IcfFoundations() {
             Basements, frost walls, stem walls, retaining walls, and large commercial foundations.
           </p>
           <p className="mt-3 max-w-3xl">Other projects are by request.</p>
-          <p className="mt-3 max-w-3xl">[PLACEHOLDER: ICF brand, wall thickness, or sizes to name.]</p>
+          {icfSpecs ? <p className="mt-3 max-w-3xl">{icfSpecs}</p> : null}
         </section>
 
         <section className="mt-12" aria-labelledby="process-heading">
@@ -193,7 +203,7 @@ export default function IcfFoundations() {
             {faqs.map((item) => (
               <article key={item.question} className="rounded-[1.1rem] border border-white/[0.06] bg-[#18181b] px-5 py-5">
                 <h3 className="text-2xl">{item.question}</h3>
-                <p className="mt-2 text-stone-300">{item.answer}</p>
+                <p className="mt-2 text-stone-300">{faqText(item)}</p>
               </article>
             ))}
           </div>

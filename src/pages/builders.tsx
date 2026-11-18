@@ -1,5 +1,7 @@
 import AudiencePage from '../components/AudiencePage'
 
+const caseStudy = '' // [PLACEHOLDER: project photo and case study for a home-builder or general-contractor ICF foundation.]
+
 export default function Builders() {
   return (
     <AudiencePage
@@ -22,7 +24,7 @@ export default function Builders() {
           text: 'The walls are built to the plans you send. The quote comes from those plans and a look at the ground.',
         },
       ]}
-      placeholder="[PLACEHOLDER: project photo and case study for a home-builder or general-contractor ICF foundation.]"
+      placeholder={caseStudy}
     />
   )
 }

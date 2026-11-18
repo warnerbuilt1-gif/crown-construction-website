@@ -1,5 +1,7 @@
 import AudiencePage from '../components/AudiencePage'
 
+const caseStudy = '' // [PLACEHOLDER: project photo and case study for a commercial or multi-family ICF foundation.]
+
 export default function Commercial() {
   return (
     <AudiencePage
@@ -22,7 +24,7 @@ export default function Commercial() {
           text: 'The sequence is set with the general contractor so the next trade can get on the building.',
         },
       ]}
-      placeholder="[PLACEHOLDER: project photo and case study for a commercial or multi-family ICF foundation.]"
+      placeholder={caseStudy}
     />
   )
 }

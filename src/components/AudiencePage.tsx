@@ -15,10 +15,10 @@ type AudiencePageProps = {
   h1: string
   intro: string
   points: Point[]
-  placeholder: string
+  placeholder?: string
 }
 
-export default function AudiencePage({ title, description, path, h1, intro, points, placeholder }: AudiencePageProps) {
+export default function AudiencePage({ title, description, path, h1, intro, points, placeholder = '' }: AudiencePageProps) {
   return (
     <>
       <Seo title={title} description={description} path={path} />
@@ -40,10 +40,12 @@ export default function AudiencePage({ title, description, path, h1, intro, poin
           </div>
         </section>
 
-        <section className="mt-12" aria-labelledby="project-heading">
-          <h2 id="project-heading" className="text-3xl font-semibold uppercase tracking-[0.06em]">Related project</h2>
-          <p className="mt-4 max-w-3xl">{placeholder}</p>
-        </section>
+        {placeholder.trim() ? (
+          <section className="mt-12" aria-labelledby="project-heading">
+            <h2 id="project-heading" className="text-3xl font-semibold uppercase tracking-[0.06em]">Related project</h2>
+            <p className="mt-4 max-w-3xl">{placeholder}</p>
+          </section>
+        ) : null}
 
         <p className="mt-10">
           <Link href="/icf-foundations" className="text-wood underline">ICF foundations</Link>

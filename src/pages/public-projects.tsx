@@ -1,5 +1,7 @@
 import AudiencePage from '../components/AudiencePage'
 
+const caseStudy = '' // [PLACEHOLDER: public project photo and case study. Add Hearst Library or Lookout Pass here if that is the job you want shown.]
+
 export default function PublicProjects() {
   return (
     <AudiencePage
@@ -22,7 +24,7 @@ export default function PublicProjects() {
           text: 'The site is kept so our crew and the other trades can work it.',
         },
       ]}
-      placeholder="[PLACEHOLDER: public project photo and case study. Add Hearst Library or Lookout Pass here if that is the job you want shown.]"
+      placeholder={caseStudy}
     />
   )
 }
