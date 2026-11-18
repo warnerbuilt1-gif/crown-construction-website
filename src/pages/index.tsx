@@ -6,7 +6,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 import Seo from '../components/Seo'
-import { PROJECTS, SERVICES, SERVICE_TOWNS, SITE_DESCRIPTION, SITE_NAME, SITE_OWNER, SITE_PHONE_DISPLAY, SITE_PHONE_TEL, SITE_SERVICE_AREA } from '../config/site'
+import { PROJECTS, SERVICES, SERVICE_TOWNS, SITE_DESCRIPTION, SITE_OWNER, SITE_PHONE_DISPLAY, SITE_PHONE_TEL, SITE_SERVICE_AREA } from '../config/site'
 
 const homeServices = SERVICES.slice(0, 3)
 
@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <>
       <Seo
-        title={`Foundations & Flatwork in Anaconda, MT | ${SITE_NAME}`}
+        title="ICF Foundations in Montana | Crown Construction"
         description={SITE_DESCRIPTION}
         path="/"
       />

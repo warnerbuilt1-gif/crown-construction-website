@@ -108,7 +108,7 @@ This project is configured as a standalone Crown Construction website and is int
 
 **Crown Construction**  
 Phone: [406-595-4472](tel:4065954472)  
-Email: [crownconstrustion@gmail.com](mailto:crownconstrustion@gmail.com)
+Email: [4crownrentals@gmail.com](mailto:4crownrentals@gmail.com)
 
 For future updates, edit the project directly in this standalone Crown Construction folder.
 

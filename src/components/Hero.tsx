@@ -12,8 +12,11 @@ export default function Hero() {
             {SITE_LEGAL_NAME} · Anaconda · Since {SITE_ESTABLISHED}
           </motion.p>
           <motion.h1 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }} className="hero-title leading-tight">
-            Foundations and commercial work, built on schedule.
+            Montana&apos;s ICF Foundation Specialists
           </motion.h1>
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }} className="hero-copy mt-4 max-w-xl">
+            We build large-scale ICF foundations for builders, commercial and public projects across Anaconda, Butte and Southwest Montana.
+          </motion.p>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="hero-copy mt-4 max-w-xl">
             Neal Warner builds foundations, slabs, waterproofing, and site work for homeowners, builders, and public jobs across Anaconda, Butte, Deer Lodge, and Philipsburg. Licensed and insured. You get a straight price, a set start, and a site the next trade can use.
           </motion.p>

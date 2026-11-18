@@ -1,7 +1,11 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import Script from 'next/script'
 import MobileCallBar from '../components/MobileCallBar'
+import { GA4_ID, SITE_EMAIL, SITE_ESTABLISHED, SITE_NAME, SITE_OWNER, SITE_URL } from '../config/site'
+
+const gaReady = GA4_ID !== '[GA4_ID_PLACEHOLDER]'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -15,12 +19,12 @@ export default function App({ Component, pageProps }: AppProps) {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'GeneralContractor',
-              name: 'Crown Construction of Montana',
-              url: 'https://crownconstructionmt.com',
+              name: SITE_NAME,
+              url: SITE_URL,
               telephone: '+1-406-595-4472',
-              email: 'crownconstrustion@gmail.com',
-              founder: 'Neal Warner',
-              foundingDate: '2017',
+              email: SITE_EMAIL,
+              founder: SITE_OWNER,
+              foundingDate: SITE_ESTABLISHED,
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: '2121 Garfield St',
@@ -29,11 +33,24 @@ export default function App({ Component, pageProps }: AppProps) {
                 postalCode: '59711',
                 addressCountry: 'US',
               },
-              areaServed: ['Anaconda', 'Butte', 'Deer Lodge', 'Philipsburg'],
+              areaServed: ['Anaconda', 'Butte', 'Southwest Montana'],
             }),
           }}
         />
       </Head>
+      {gaReady ? (
+        <>
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`} strategy="afterInteractive" />
+          <Script id="ga4" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA4_ID}');
+            `}
+          </Script>
+        </>
+      ) : null}
       <Component {...pageProps} />
       <MobileCallBar />
     </>
