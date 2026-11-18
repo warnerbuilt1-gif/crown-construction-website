@@ -21,7 +21,7 @@ export default function Hero() {
             Neal Warner builds foundations, slabs, waterproofing, and site work for homeowners, builders, and public jobs across Anaconda, Butte, Deer Lodge, and Philipsburg. Licensed and insured. You get a straight price, a set start, and a site the next trade can use.
           </motion.p>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.28 }} className="hero-actions mt-6">
-            <Link href="/contact" className="inline-block rounded-full bg-wood px-6 py-3 font-semibold text-[#120f0d] shadow-lg shadow-black/30">
+            <Link href="/contact/#quote-form" className="inline-block rounded-full bg-wood px-6 py-3 font-semibold text-[#120f0d] shadow-lg shadow-black/30">
               Get a consultation
             </Link>
             <Link href="/gallery" className="hero-action-secondary inline-block rounded-full border border-white/20 px-6 py-3 font-semibold text-white">

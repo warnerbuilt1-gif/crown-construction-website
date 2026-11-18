@@ -200,7 +200,7 @@ export default function IcfFoundations() {
         </section>
 
         <section className="mt-12">
-          <Link href="/contact" className="inline-flex min-h-12 items-center rounded-full bg-wood px-6 py-3 font-semibold text-[#120f0d]">
+          <Link href="/contact/#quote-form" className="inline-flex min-h-12 items-center rounded-full bg-wood px-6 py-3 font-semibold text-[#120f0d]">
             Request a quote
           </Link>
         </section>

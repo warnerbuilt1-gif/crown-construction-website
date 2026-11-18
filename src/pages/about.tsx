@@ -59,7 +59,7 @@ export default function About() {
                   <span>The site gets left workable</span>
                   <p>Forms, spoil, and trash come off the pad so the next trade is not cleaning up before they can start.</p>
                 </label>
-                <Link href="/contact" className="inline-block rounded-full bg-wood px-6 py-3 font-semibold text-[#120f0d]">
+                <Link href="/contact/#quote-form" className="inline-block rounded-full bg-wood px-6 py-3 font-semibold text-[#120f0d]">
                   Request a quote
                 </Link>
               </div>

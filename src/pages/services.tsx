@@ -139,7 +139,7 @@ export default function Services(){
               <p>{activeService.description}</p>
               <div className="hero-actions mt-6">
                 <a href={SITE_PHONE_TEL} className="inline-block rounded-full bg-wood px-5 py-3 font-semibold text-[#120f0d]">Call {SITE_PHONE_DISPLAY}</a>
-                <Link href="/contact" className="inline-block rounded-full border border-white/30 px-5 py-3 font-semibold text-white">Request a quote</Link>
+                <Link href="/contact/#quote-form" className="inline-block rounded-full border border-white/30 px-5 py-3 font-semibold text-white">Request a quote</Link>
               </div>
             </div>
           </div>

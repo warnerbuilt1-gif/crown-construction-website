@@ -49,7 +49,7 @@ export default function AudiencePage({ title, description, path, h1, intro, poin
           <Link href="/icf-foundations" className="text-wood underline">ICF foundations</Link>
         </p>
         <p className="mt-6">
-          <Link href="/contact" className="inline-flex min-h-12 items-center rounded-full bg-wood px-6 py-3 font-semibold text-[#120f0d]">
+          <Link href="/contact/#quote-form" className="inline-flex min-h-12 items-center rounded-full bg-wood px-6 py-3 font-semibold text-[#120f0d]">
             Request a quote
           </Link>
         </p>

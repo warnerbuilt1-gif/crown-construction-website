@@ -186,7 +186,7 @@ export default function Gallery(){
                       </div>
                     ))}
                   </div>
-                  <Link href={`/contact/?job=${encodeURIComponent(story.title)}`} className="inline-block mt-4 rounded-full bg-wood px-5 py-3 font-semibold text-[#120f0d]">
+                  <Link href={`/contact/?job=${encodeURIComponent(story.title)}#quote-form`} className="inline-block mt-4 rounded-full bg-wood px-5 py-3 font-semibold text-[#120f0d]">
                     Get a consultation for a job like this
                   </Link>
                 </div>
@@ -222,7 +222,7 @@ export default function Gallery(){
             <p className="mt-2 text-stone-200">Send the town, the work, and a photo. Neal walks it and prices it.</p>
             <div className="mt-5 flex flex-wrap justify-center gap-3">
               <a href={SITE_PHONE_TEL} className="inline-block rounded-full bg-wood px-6 py-3 font-semibold text-[#120f0d]">Call {SITE_PHONE_DISPLAY}</a>
-              <Link href="/contact" className="inline-block rounded-full border border-white/30 px-6 py-3 font-semibold text-white">Get a consultation</Link>
+              <Link href="/contact/#quote-form" className="inline-block rounded-full border border-white/30 px-6 py-3 font-semibold text-white">Get a consultation</Link>
             </div>
           </section>
         </main>

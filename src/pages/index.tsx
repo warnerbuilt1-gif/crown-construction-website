@@ -148,7 +148,7 @@ export default function Home() {
           </div>
           <div className="mt-6 flex flex-col justify-center gap-4 text-sm md:flex-row">
             <Link href="/gallery" className="text-wood underline">View our portfolio</Link>
-            <Link href="/contact" className="text-wood underline">Get a consultation</Link>
+            <Link href="/contact/#quote-form" className="text-wood underline">Get a consultation</Link>
           </div>
         </section>
       </main>

@@ -20,7 +20,7 @@ export default function NotFound() {
           <p className="mt-3 text-stone-200">The link may be old. The work, the gallery, and the quote form are still here.</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link href="/" className="inline-block rounded-full bg-wood px-6 py-3 font-semibold text-[#120f0d]">Home</Link>
-            <Link href="/contact" className="inline-block rounded-full border border-white/30 px-6 py-3 font-semibold text-white">Request a quote</Link>
+            <Link href="/contact/#quote-form" className="inline-block rounded-full border border-white/30 px-6 py-3 font-semibold text-white">Request a quote</Link>
             <a href={SITE_PHONE_TEL} className="inline-block rounded-full border border-white/30 px-6 py-3 font-semibold text-white">Call {SITE_PHONE_DISPLAY}</a>
           </div>
         </div>
