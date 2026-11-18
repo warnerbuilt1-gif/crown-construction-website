@@ -1,8 +1,8 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Seo from '../components/Seo'
 import { SERVICES, SITE_LEGAL_NAME, SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from '../config/site'
 
 export default function Services(){
@@ -98,9 +98,11 @@ export default function Services(){
 
   return (
     <>
-      <Head>
-        <title>{`Services | ${SITE_LEGAL_NAME}`}</title>
-      </Head>
+      <Seo
+        title={`Services | ${SITE_LEGAL_NAME}`}
+        description="Foundations and footings, slabs and flatwork, waterproofing and drainage, site prep and cleanup, and retaining and grade work from Crown Construction of Montana."
+        path="/services/"
+      />
       <Header />
       <section
         ref={sectionRef}
@@ -118,7 +120,7 @@ export default function Services(){
                 onClick={() => handleManualSelect(index)}
                 type="button"
               >
-                <h3>{service.title}</h3>
+                <h2>{service.title}</h2>
                 <div className="progress-track" aria-hidden="true">
                   <span
                     className="progress-fill"
@@ -133,7 +135,7 @@ export default function Services(){
 
           <div className="showcase-right" key={activeService.title}>
             <div className="service-copy fade-glide">
-              <h4>{activeService.title}</h4>
+              <h3>{activeService.title}</h3>
               <p>{activeService.description}</p>
               <div className="hero-actions mt-6">
                 <a href={SITE_PHONE_TEL} className="inline-block rounded-full bg-wood px-5 py-3 font-semibold text-[#120f0d]">Call {SITE_PHONE_DISPLAY}</a>

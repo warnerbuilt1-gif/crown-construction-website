@@ -1,7 +1,7 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+import Seo from '../components/Seo'
 import {
   SITE_ADDRESS,
   SITE_CITY,
@@ -19,13 +19,11 @@ import {
 export default function About() {
   return (
     <>
-      <Head>
-        <title>{`About ${SITE_OWNER} | ${SITE_LEGAL_NAME}`}</title>
-        <meta
-          name="description"
-          content={`${SITE_LEGAL_NAME} is ${SITE_OWNER}'s construction company in ${SITE_CITY}, Montana. Foundations, slabs, flatwork, and site work since ${SITE_ESTABLISHED}.`}
-        />
-      </Head>
+      <Seo
+        title={`About ${SITE_OWNER} | ${SITE_LEGAL_NAME}`}
+        description={`${SITE_LEGAL_NAME} is ${SITE_OWNER}'s construction company in ${SITE_CITY}, Montana. Foundations, slabs, flatwork, and site work since ${SITE_ESTABLISHED}.`}
+        path="/about/"
+      />
       <Header />
       <main>
         <section className="about-forest-wrap">

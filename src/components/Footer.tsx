@@ -27,7 +27,7 @@ export default function Footer() {
           {' · '}
           <a href={SITE_RENTALS_URL} className="font-semibold text-wood">Need the machine? Crown Rentals</a>
         </div>
-        <div className="mt-3 text-stone-500">© {new Date().getFullYear()} {SITE_LEGAL_NAME}. Building in Anaconda since {SITE_ESTABLISHED}.</div>
+        <div className="mt-3 text-[#8a7b72]">© {new Date().getFullYear()} {SITE_LEGAL_NAME}. Building in Anaconda since {SITE_ESTABLISHED}.</div>
       </div>
     </footer>
   )

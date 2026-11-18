@@ -258,7 +258,7 @@ p {
 
 .step-row span {
   font-family: 'Oswald', sans-serif;
-  color: #8d5f42;
+  color: #b07a58;
   letter-spacing: 0.12em;
 }
 
@@ -352,7 +352,7 @@ p {
   transition: opacity 0.55s ease, transform 0.55s ease, box-shadow 0.35s ease;
 }
 
-.service-card h4 {
+.service-card h3 {
   margin: 0;
   font-size: 1.5rem;
   font-weight: 800;
@@ -450,7 +450,7 @@ p {
   cursor: pointer;
 }
 
-.service-tab h3 {
+.service-tab h2 {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.4rem, 2.4vw, 2.25rem);
@@ -459,7 +459,7 @@ p {
   transition: color 0.25s ease;
 }
 
-.service-tab.active h3 {
+.service-tab.active h2 {
   color: #ffffff;
 }
 
@@ -496,7 +496,7 @@ p {
   justify-content: center;
 }
 
-.service-copy h4 {
+.service-copy h3 {
   margin: 0;
   font-family: 'Oswald', sans-serif;
   font-size: 1.5rem;

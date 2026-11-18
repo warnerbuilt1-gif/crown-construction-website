@@ -1,7 +1,7 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Seo from './Seo'
 import { SERVICE_TOWNS, SITE_ADDRESS, SITE_LEGAL_NAME, SITE_OWNER, SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from '../config/site'
 
 type TownPageProps = {
@@ -14,11 +14,15 @@ export default function TownPage({ city, path, homeYard = false }: TownPageProps
   const title = `Foundations and commercial construction in ${city}, MT | Crown Construction`
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={`Foundations, slabs, and commercial construction in ${city}, MT. Licensed and insured. Call ${SITE_PHONE_DISPLAY}.`} />
-        <link rel="canonical" href={`https://crownconstructionmt.com${path}`} />
-      </Head>
+      <Seo
+        title={title}
+        description={
+          homeYard
+            ? `Foundations, slabs, waterproofing, and site work in ${city}, MT, plus commercial construction. Licensed and insured. Call ${SITE_PHONE_DISPLAY}.`
+            : `Crown Construction works ${city}, MT from the Anaconda yard. Neal walks the job before a price is set. Call ${SITE_PHONE_DISPLAY}.`
+        }
+        path={path}
+      />
       <Header />
       <main className="mx-auto max-w-3xl px-6 py-16">
         <p className="services-eyebrow">{SITE_LEGAL_NAME}</p>

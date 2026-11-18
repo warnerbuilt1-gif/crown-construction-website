@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
+import Seo from '../components/Seo'
 import { PROJECTS, SERVICES, SERVICE_TOWNS, SITE_DESCRIPTION, SITE_NAME, SITE_OWNER, SITE_PHONE_DISPLAY, SITE_PHONE_TEL, SITE_SERVICE_AREA } from '../config/site'
 
 const homeServices = SERVICES.slice(0, 3)
@@ -50,9 +51,12 @@ export default function Home() {
 
   return (
     <>
+      <Seo
+        title={`Foundations & Flatwork in Anaconda, MT | ${SITE_NAME}`}
+        description={SITE_DESCRIPTION}
+        path="/"
+      />
       <Head>
-        <title>{`Foundations & Flatwork in Anaconda, MT | ${SITE_NAME}`}</title>
-        <meta name="description" content={SITE_DESCRIPTION} />
         <link rel="preload" as="image" href="/portfolio/foundation-layout-aerial.webp" />
       </Head>
       <Header />
@@ -78,7 +82,7 @@ export default function Home() {
             <div className="services-grid">
               {homeServices.map((service) => (
                 <article className="service-card" key={service.title}>
-                  <h4>{service.title}</h4>
+                  <h3>{service.title}</h3>
                   <p>{service.description}</p>
                 </article>
               ))}
@@ -132,7 +136,7 @@ export default function Home() {
         <section className="mx-auto mt-16 max-w-6xl rounded-[28px] border border-white/[0.06] bg-zinc-900 px-6 py-16 text-stone-100 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05),0_28px_80px_rgba(0,0,0,0.35)]">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
-              <h3 className="text-2xl font-semibold uppercase tracking-[0.08em] text-white">Get a straight estimate</h3>
+              <h2 className="text-2xl font-semibold uppercase tracking-[0.08em] text-white">Get a straight estimate</h2>
               <p className="mt-2 max-w-2xl text-stone-300">
                 Call {SITE_OWNER} with the address and the work. Foundations, slabs, waterproofing, and site cleanup across {SITE_SERVICE_AREA}.
               </p>

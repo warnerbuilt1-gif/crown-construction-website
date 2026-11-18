@@ -1,15 +1,17 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Seo from '../components/Seo'
 import { SITE_LEGAL_NAME, SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from '../config/site'
 
 export default function NotFound() {
   return (
     <>
-      <Head>
-        <title>{`Page not found | ${SITE_LEGAL_NAME}`}</title>
-      </Head>
+      <Seo
+        title={`Page not found | ${SITE_LEGAL_NAME}`}
+        description="That page is not on this site. The work, the gallery, and the quote form are still here."
+        path="/404/"
+      />
       <Header />
       <main className="contact-forest-wrap">
         <div className="max-w-xl mx-auto text-center">

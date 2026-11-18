@@ -1,9 +1,9 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import Image from 'next/image'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Seo from '../components/Seo'
 import { SITE_LEGAL_NAME, SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from '../config/site'
 
 export default function Gallery(){
@@ -121,9 +121,11 @@ export default function Gallery(){
 
   return (
     <>
-      <Head>
-        <title>{`Recent Work | ${SITE_LEGAL_NAME}`}</title>
-      </Head>
+      <Seo
+        title={`Recent Work | ${SITE_LEGAL_NAME}`}
+        description={`Foundations, commercial work, and public flatwork from ${SITE_LEGAL_NAME}.`}
+        path="/gallery/"
+      />
       <Header />
       <section className="gallery-forest-wrap" aria-label="Project gallery">
         <main className="gallery-shell">

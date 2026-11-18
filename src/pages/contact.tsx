@@ -1,8 +1,8 @@
-import Head from 'next/head'
 import { useEffect, useState, type FormEvent } from 'react'
 import { useRouter } from 'next/router'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Seo from '../components/Seo'
 import { SITE_ADDRESS, SITE_EMAIL, SITE_LEGAL_NAME, SITE_MAP_LINK, SITE_OWNER, SITE_PHONE_DISPLAY, SITE_PHONE_TEL, SITE_SERVICE_AREA } from '../config/site'
 
 type QuoteFields = {
@@ -83,10 +83,11 @@ export default function Contact(){
 
   return (
     <>
-      <Head>
-        <title>{`Get a Consultation | ${SITE_LEGAL_NAME}`}</title>
-        <meta name="description" content={`Call ${SITE_OWNER} at ${SITE_PHONE_DISPLAY} for a foundation or commercial estimate in Anaconda.`} />
-      </Head>
+      <Seo
+        title={`Get a Consultation | ${SITE_LEGAL_NAME}`}
+        description={`Call ${SITE_OWNER} at ${SITE_PHONE_DISPLAY} for a foundation or commercial estimate in Anaconda.`}
+        path="/contact/"
+      />
       <Header />
       <main>
       <section className="contact-forest-wrap">
