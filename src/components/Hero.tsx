@@ -47,7 +47,7 @@ export default function Hero() {
         <div className="hero-visual flex-1">
           <div className="hero-logo-panel">
             <Image
-              src="/portfolio/foundation-layout-aerial.jpg"
+              src="/portfolio/foundation-layout-aerial.webp"
               alt="Aerial view of a formed foundation layout on a graded lot"
               width={2048}
               height={1365}

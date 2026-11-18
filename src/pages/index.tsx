@@ -12,23 +12,40 @@ const homeServices = SERVICES.slice(0, 3)
 export default function Home() {
   useEffect(() => {
     const cards = document.querySelectorAll('.service-card')
-    if (!cards.length) return
+    let cardObserver: IntersectionObserver | undefined
+    if (cards.length) {
+      cardObserver = new IntersectionObserver(
+        (entries, currentObserver) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible')
+              currentObserver.unobserve(entry.target)
+            }
+          })
+        },
+        { threshold: 0.2, rootMargin: '0px 0px -40px 0px' }
+      )
+      cards.forEach((card) => cardObserver?.observe(card))
+    }
 
-    const observer = new IntersectionObserver(
+    const showcase = document.querySelector('.services-showcase')
+    const bgObserver = new IntersectionObserver(
       (entries, currentObserver) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible')
+            entry.target.classList.add('is-bg-ready')
             currentObserver.unobserve(entry.target)
           }
         })
       },
-      { threshold: 0.2, rootMargin: '0px 0px -40px 0px' }
+      { rootMargin: '200px 0px' }
     )
+    if (showcase) bgObserver.observe(showcase)
 
-    cards.forEach((card) => observer.observe(card))
-
-    return () => observer.disconnect()
+    return () => {
+      cardObserver?.disconnect()
+      bgObserver.disconnect()
+    }
   }, [])
 
   return (
@@ -36,6 +53,7 @@ export default function Home() {
       <Head>
         <title>{`Foundations & Flatwork in Anaconda, MT | ${SITE_NAME}`}</title>
         <meta name="description" content={SITE_DESCRIPTION} />
+        <link rel="preload" as="image" href="/portfolio/foundation-layout-aerial.webp" />
       </Head>
       <Header />
       <main>
@@ -78,7 +96,7 @@ export default function Home() {
           <div className="work-grid mt-6">
             {PROJECTS.map((project) => (
               <Link href={`/gallery/#${project.id}`} className="work-card" key={project.id}>
-                <Image src={project.image} alt={project.alt} width={1200} height={900} />
+                <Image src={project.image} alt={project.alt} width={1200} height={900} loading="lazy" />
                 <div>
                   <strong>{project.town}</strong>
                   <span>{project.title}</span>

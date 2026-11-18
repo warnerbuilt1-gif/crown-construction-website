@@ -16,11 +16,11 @@ export default function Gallery(){
       challenge: 'The pad had to meet the building and the plaza, not a blank lot.',
       approach: 'Neal walked the grade, formed the pad to the existing edges, and finished the flatwork in place.',
       result: 'A finished plaza surface the library could open onto.',
-      image: '/portfolio/library-clock-pad.jpg',
+      image: '/portfolio/library-clock-pad.webp',
       alt: 'Concrete flatwork pad in front of the historic library building',
       supporting: [
-        '/portfolio/library-clock-close.jpg',
-        '/portfolio/hearst-library-plaza.jpg',
+        '/portfolio/library-clock-close.webp',
+        '/portfolio/hearst-library-plaza.webp',
       ],
     },
     {
@@ -31,11 +31,11 @@ export default function Gallery(){
       challenge: 'The wall had to follow the curve and hold the yard.',
       approach: 'Layout along the slope, then a block wall with a poured cap.',
       result: 'A wall the house and yard can sit against.',
-      image: '/portfolio/retaining-wall-curve.jpg',
+      image: '/portfolio/retaining-wall-curve.webp',
       alt: 'Curved block retaining wall under construction along a house',
       supporting: [
-        '/portfolio/retaining-wall-layout.jpg',
-        '/portfolio/footing-curve.jpg',
+        '/portfolio/retaining-wall-layout.webp',
+        '/portfolio/footing-curve.webp',
       ],
     },
     {
@@ -46,53 +46,53 @@ export default function Gallery(){
       challenge: 'The patio needed a finished edge, not an open cut beside the house.',
       approach: 'Stone wall with a poured cap, built to the house.',
       result: 'A usable patio with a finished wall.',
-      image: '/portfolio/patio-stone-wall.jpg',
+      image: '/portfolio/patio-stone-wall.webp',
       alt: 'Finished curved stone retaining wall and concrete patio beside a house',
       supporting: [
-        '/portfolio/residential-exterior.jpg',
-        '/portfolio/slab-finish.jpg',
+        '/portfolio/residential-exterior.webp',
+        '/portfolio/slab-finish.webp',
       ],
     },
   ]
 
   const fieldPhotos = [
     {
-      src: '/portfolio/footing-curve.jpg',
+      src: '/portfolio/footing-curve.webp',
       alt: 'Curved footing and grade work in progress',
       caption: 'Curved footing layout and grade shaping.'
     },
     {
-      src: '/portfolio/footing-layout.jpg',
+      src: '/portfolio/footing-layout.webp',
       alt: 'Long footing run with rebar and forms',
       caption: 'Long footing runs with clean form lines.'
     },
     {
-      src: '/portfolio/foundation-wall-overview.jpg',
+      src: '/portfolio/foundation-wall-overview.webp',
       alt: 'Foundation wall overview on mountain property',
       caption: 'Foundation wall progress on a mountain build.'
     },
     {
-      src: '/portfolio/waterproofing-detail.jpg',
+      src: '/portfolio/waterproofing-detail.webp',
       alt: 'Waterproofing detail against a foundation wall',
       caption: 'Waterproofing detail and drainage prep.'
     },
     {
-      src: '/portfolio/slab-finish.jpg',
+      src: '/portfolio/slab-finish.webp',
       alt: 'Finished slab reflecting the sky',
       caption: 'Fresh slab finish with equipment still on site.'
     },
     {
-      src: '/portfolio/residential-exterior.jpg',
+      src: '/portfolio/residential-exterior.webp',
       alt: 'Residential exterior with siding and work area',
       caption: 'Exterior progress on a custom residence.'
     },
     {
-      src: '/portfolio/library-clock-pad.jpg',
+      src: '/portfolio/library-clock-pad.webp',
       alt: 'Wide shot of library clock pad concrete work',
       caption: 'Civic flatwork in a public-facing downtown setting.'
     },
     {
-      src: '/portfolio/library-clock-close.jpg',
+      src: '/portfolio/library-clock-close.webp',
       alt: 'Closer view of library clock pad area',
       caption: 'Closer finish detail around the clock plaza.'
     },
@@ -135,11 +135,12 @@ export default function Gallery(){
             </div>
             <div className="gallery-brand-media">
               <Image
-                src="/portfolio/slab-finish.jpg"
+                src="/portfolio/slab-finish.webp"
                 alt="Completed slab project"
                 width={1600}
                 height={1200}
                 sizes="(max-width: 768px) 100vw, 420px"
+                loading="lazy"
                 className="gallery-brand-image"
               />
             </div>
@@ -155,6 +156,7 @@ export default function Gallery(){
                     width={1600}
                     height={1200}
                     sizes="(max-width: 900px) 100vw, 56vw"
+                    loading="lazy"
                     className="portfolio-story-image"
                   />
                 </div>
@@ -176,6 +178,7 @@ export default function Gallery(){
                           width={900}
                           height={1200}
                           sizes="(max-width: 900px) 100vw, 20vw"
+                          loading="lazy"
                           className="portfolio-support-image"
                         />
                       </div>
@@ -203,6 +206,7 @@ export default function Gallery(){
                     width={1200}
                     height={1600}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    loading="lazy"
                     className="portfolio-grid-image"
                   />
                   <figcaption>{photo.caption}</figcaption>

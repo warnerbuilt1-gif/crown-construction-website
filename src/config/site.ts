@@ -58,7 +58,7 @@ export const PROJECTS = [
     challenge: 'Public flatwork in front of an existing civic building. The pad had to meet the building and the plaza, not a blank lot.',
     approach: 'Neal walked the grade, formed the pad to the existing edges, and finished the flatwork in place.',
     result: 'A finished plaza surface the library could open onto.',
-    image: '/portfolio/hearst-library-plaza.jpg',
+    image: '/portfolio/hearst-library-plaza.webp',
     alt: 'Phoebe Apperson Hearst statue on the plaza in front of a brick library',
   },
   {
@@ -69,7 +69,7 @@ export const PROJECTS = [
     challenge: 'The grade dropped beside the house. The wall had to follow the curve and hold the yard.',
     approach: 'Layout along the slope, then a block wall with a poured cap.',
     result: 'A wall the house and yard can sit against.',
-    image: '/portfolio/retaining-wall-curve.jpg',
+    image: '/portfolio/retaining-wall-curve.webp',
     alt: 'Curved block retaining wall under construction along a house',
   },
   {
@@ -80,7 +80,7 @@ export const PROJECTS = [
     challenge: 'The patio needed a finished edge, not an open cut beside the house.',
     approach: 'Stone wall with a poured cap, built to the house.',
     result: 'A usable patio with a finished wall.',
-    image: '/portfolio/patio-stone-wall.jpg',
+    image: '/portfolio/patio-stone-wall.webp',
     alt: 'Finished curved stone retaining wall and concrete patio beside a house',
   },
 ] as const

@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap');
 
 :root {
-  --forest-bg-image: url('/portfolio/slab-finish.jpg');
+  --forest-bg-image: url('/portfolio/slab-finish.webp');
 }
 
 html, body, #__next {
@@ -59,7 +59,7 @@ p {
 .hero-gradient {
   background:
     linear-gradient(100deg, rgba(9, 9, 11, 0.94) 0%, rgba(9, 9, 11, 0.86) 48%, rgba(9, 9, 11, 0.55) 100%),
-    url('/portfolio/foundation-layout-aerial.jpg');
+    url('/portfolio/foundation-layout-aerial.webp');
   background-size: cover;
   background-position: center;
 }
@@ -285,12 +285,16 @@ p {
   position: relative;
   width: 100%;
   padding: clamp(4.5rem, 8vw, 7rem) 1.5rem;
-  background-image:
-    linear-gradient(rgba(13, 13, 16, 0.9), rgba(13, 13, 16, 0.9)),
-    url('/portfolio/patio-stone-wall.jpg');
+  background-image: linear-gradient(rgba(13, 13, 16, 0.9), rgba(13, 13, 16, 0.9));
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
+}
+
+.services-showcase.is-bg-ready {
+  background-image:
+    linear-gradient(rgba(13, 13, 16, 0.9), rgba(13, 13, 16, 0.9)),
+    url('/portfolio/patio-stone-wall.webp');
 }
 
 .services-shell {
@@ -398,7 +402,7 @@ p {
   padding: 3rem 0;
   background-image:
     linear-gradient(rgba(8, 8, 10, 0.78), rgba(8, 8, 10, 0.86)),
-    url('/portfolio/foundation-wall-overview.jpg');
+    url('/portfolio/foundation-wall-overview.webp');
   background-size: cover;
   background-position: center;
 }
