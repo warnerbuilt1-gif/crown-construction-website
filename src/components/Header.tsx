@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { useEffect, useId, useRef, useState } from 'react'
+import { Fragment, useEffect, useId, useRef, useState } from 'react'
 import { SITE_CREDENTIALS, SITE_PHONE_DISPLAY, SITE_PHONE_TEL, SITE_SLOGAN } from '../config/site'
 
 const navItems = [
@@ -11,6 +11,12 @@ const navItems = [
   { href: '/gallery', label: 'Portfolio' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
+]
+
+const audienceLinks = [
+  { href: '/builders', label: 'Builders' },
+  { href: '/commercial', label: 'Commercial' },
+  { href: '/public-projects', label: 'Public projects' },
 ]
 
 export default function Header() {
@@ -25,7 +31,8 @@ export default function Header() {
     return router.pathname.startsWith(href)
   }
 
-  const crumb = navItems.find((item) => item.href !== '/' && isActive(item.href))
+  const crumb = [...navItems, ...audienceLinks].find((item) => item.href !== '/' && isActive(item.href))
+  const audienceActive = audienceLinks.some((item) => isActive(item.href))
 
   useEffect(() => {
     setOpen(false)
@@ -104,18 +111,44 @@ export default function Header() {
 
         <nav className="desktop-nav mt-3 flex flex-wrap gap-2" aria-label="Primary">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={isActive(item.href) ? 'page' : undefined}
-              className={`inline-flex rounded-full border px-3 py-2 text-sm font-medium ${
-                isActive(item.href)
-                  ? 'border-wood bg-wood text-[#120f0d]'
-                  : 'border-stone-700 text-stone-200'
-              }`}
-            >
-              {item.label}
-            </Link>
+            <Fragment key={item.href}>
+              <Link
+                href={item.href}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+                className={`inline-flex rounded-full border px-3 py-2 text-sm font-medium ${
+                  isActive(item.href)
+                    ? 'border-wood bg-wood text-[#120f0d]'
+                    : 'border-stone-700 text-stone-200'
+                }`}
+              >
+                {item.label}
+              </Link>
+              {item.href === '/icf-foundations' ? (
+                <details className="nav-dropdown">
+                  <summary
+                    className={`inline-flex cursor-pointer list-none items-center rounded-full border px-3 py-2 text-sm font-medium ${
+                      audienceActive
+                        ? 'border-wood bg-wood text-[#120f0d]'
+                        : 'border-stone-700 text-stone-200'
+                    }`}
+                  >
+                    Who We Serve
+                    <span aria-hidden="true"> ▾</span>
+                  </summary>
+                  <div className="nav-dropdown-panel">
+                    {audienceLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        aria-current={isActive(link.href) ? 'page' : undefined}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </details>
+              ) : null}
+            </Fragment>
           ))}
         </nav>
       </div>
@@ -124,14 +157,30 @@ export default function Header() {
         <div className="mobile-nav-layer" ref={menuRef}>
           <nav id={menuId} className="mobile-nav" aria-label="Mobile">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                aria-current={isActive(item.href) ? 'page' : undefined}
-                className={isActive(item.href) ? 'is-active' : undefined}
-              >
-                {item.label}
-              </Link>
+              <Fragment key={item.href}>
+                <Link
+                  href={item.href}
+                  aria-current={isActive(item.href) ? 'page' : undefined}
+                  className={isActive(item.href) ? 'is-active' : undefined}
+                >
+                  {item.label}
+                </Link>
+                {item.href === '/icf-foundations' ? (
+                  <>
+                    <p className="mobile-nav-label">Who We Serve</p>
+                    {audienceLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        aria-current={isActive(link.href) ? 'page' : undefined}
+                        className={isActive(link.href) ? 'is-active' : undefined}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </>
+                ) : null}
+              </Fragment>
             ))}
             <a href={SITE_PHONE_TEL}>Call {SITE_PHONE_DISPLAY}</a>
           </nav>
