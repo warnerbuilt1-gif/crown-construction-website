@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="ICF Foundations in Montana | Crown Construction"
+        title="Crown Construction of Montana | ICF Foundations in Anaconda"
         description={SITE_DESCRIPTION}
         path="/"
       />

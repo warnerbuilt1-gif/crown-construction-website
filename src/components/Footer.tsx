@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import {
+  SERVICE_TOWNS,
   SITE_ADDRESS,
   SITE_EMAIL,
   SITE_ESTABLISHED,
@@ -17,6 +19,17 @@ export default function Footer() {
         <p className="text-stone-100 font-semibold">{SITE_LEGAL_NAME}</p>
         <p className="mt-2">{SITE_ADDRESS}</p>
         <p className="mt-1">Serving {SITE_SERVICE_AREA}.</p>
+        <nav className="mt-3" aria-label="Areas We Serve">
+          <p className="text-stone-100 font-semibold">Areas We Serve</p>
+          <p className="mt-1">
+            {SERVICE_TOWNS.map((town, index) => (
+              <span key={town.slug}>
+                <Link href={town.path} className="font-semibold text-wood">{town.city}</Link>
+                {index < SERVICE_TOWNS.length - 1 ? ' · ' : ''}
+              </span>
+            ))}
+          </p>
+        </nav>
         <div className="mt-2">
           Call: <a href={SITE_PHONE_TEL} className="font-semibold text-wood">{SITE_PHONE_DISPLAY}</a>
           {' · '}

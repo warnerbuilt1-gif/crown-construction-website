@@ -6,6 +6,15 @@ import Footer from '../components/Footer'
 import Seo from '../components/Seo'
 import { SITE_LEGAL_NAME, SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from '../config/site'
 
+const supportAlt: Record<string, string> = {
+  '/portfolio/library-clock-close.webp': 'Closer view of the library clock pad',
+  '/portfolio/hearst-library-plaza.webp': 'Phoebe Apperson Hearst statue on the plaza in front of a brick library',
+  '/portfolio/retaining-wall-layout.webp': 'Layout along a curved retaining wall',
+  '/portfolio/footing-curve.webp': 'Curved footing and grade work in progress',
+  '/portfolio/residential-exterior.webp': 'Residential exterior with siding and work area',
+  '/portfolio/slab-finish.webp': 'Finished slab reflecting the sky',
+}
+
 export default function Gallery(){
   const projectStories = [
     {
@@ -176,7 +185,7 @@ export default function Gallery(){
                       <div key={src} className="portfolio-support-card">
                         <Image
                           src={src}
-                          alt=""
+                          alt={supportAlt[src] || 'Project photo from the Crown Construction portfolio'}
                           width={900}
                           height={1200}
                           sizes="(max-width: 900px) 100vw, 20vw"
