@@ -12,7 +12,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="mt-12 w-full border-t border-stone-800 bg-[#0c0c0e] text-stone-300">
+    <footer className="mt-12 w-full border-t border-stone-700 bg-[#1F2226] text-stone-300">
       <div className="max-w-6xl mx-auto p-6 text-center text-sm">
         <p className="text-stone-100 font-semibold">{SITE_LEGAL_NAME}</p>
         <p className="mt-2">{SITE_ADDRESS}</p>

@@ -1,8 +1,31 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import localFont from 'next/font/local'
 import Script from 'next/script'
 import MobileCallBar from '../components/MobileCallBar'
+
+const sans = localFont({
+  src: [
+    { path: '../fonts/inter-400.woff2', weight: '400', style: 'normal' },
+    { path: '../fonts/inter-500.woff2', weight: '500', style: 'normal' },
+    { path: '../fonts/inter-600.woff2', weight: '600', style: 'normal' },
+  ],
+  display: 'swap',
+  variable: '--font-sans',
+  adjustFontFallback: 'Arial',
+})
+
+const serif = localFont({
+  src: [
+    { path: '../fonts/cormorant-500.woff2', weight: '500', style: 'normal' },
+    { path: '../fonts/cormorant-600.woff2', weight: '600', style: 'normal' },
+    { path: '../fonts/cormorant-700.woff2', weight: '700', style: 'normal' },
+  ],
+  display: 'swap',
+  variable: '--font-serif',
+  adjustFontFallback: 'Times New Roman',
+})
 import { GA4_ID, SITE_EMAIL, SITE_ESTABLISHED, SITE_NAME, SITE_OWNER, SITE_URL } from '../config/site'
 
 const gaReady = GA4_ID !== '[GA4_ID_PLACEHOLDER]'
@@ -51,8 +74,10 @@ export default function App({ Component, pageProps }: AppProps) {
           </Script>
         </>
       ) : null}
-      <Component {...pageProps} />
-      <MobileCallBar />
+      <div className={`${sans.variable} ${serif.variable} ${sans.className}`}>
+        <Component {...pageProps} />
+        <MobileCallBar />
+      </div>
     </>
   )
 }

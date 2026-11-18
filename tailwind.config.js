@@ -7,8 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        forest: '#151312',
-        wood: '#C88D67'
+        forest: '#1F2226',
+        wood: '#B08D57',
+        bone: '#F4F1EA',
+        concrete: '#8A8F94',
       }
     }
   },

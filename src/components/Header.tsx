@@ -67,7 +67,7 @@ export default function Header() {
   }, [open])
 
   return (
-    <header className="site-header w-full border-b border-stone-800 bg-[#0c0c0e] text-stone-100 shadow-[0_16px_40px_rgba(0,0,0,0.28)]">
+    <header className="site-header w-full border-b border-stone-700 bg-[#1F2226] text-stone-100">
       <div className="max-w-6xl mx-auto p-3 sm:p-4">
         <div className="header-brand-row">
           <Link href="/" className="header-brand">

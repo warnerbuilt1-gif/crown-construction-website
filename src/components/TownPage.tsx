@@ -24,7 +24,7 @@ export default function TownPage({ city, path, homeYard = false }: TownPageProps
         path={path}
       />
       <Header />
-      <main className="mx-auto max-w-3xl px-6 py-16">
+      <main className="mx-auto max-w-6xl px-6 py-24">
         <p className="services-eyebrow">{SITE_LEGAL_NAME}</p>
         <h1 className="text-4xl font-semibold uppercase tracking-[0.04em]">Foundations and commercial construction in {city}, MT</h1>
         <p className="mt-4 text-lg">
