@@ -181,22 +181,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="home-band home-bone" data-fade>
-          <div className="home-inner cta-row">
-            <div>
-              <h2>Get a straight estimate</h2>
-              <p className="home-lead">
-                Call {SITE_OWNER} with the address and the work. Foundations, slabs, waterproofing, and site cleanup across {SITE_SERVICE_AREA}.
-              </p>
+        <section className="cta-band" data-fade>
+          <div className="cta-band-inner">
+            <p className="services-eyebrow">Free estimates</p>
+            <h2>Get a straight estimate</h2>
+            <p>
+              Call {SITE_OWNER} with the address and the work. Foundations, slabs, waterproofing, and site cleanup across {SITE_SERVICE_AREA}.
+            </p>
+            <div className="cta-band-actions">
+              <Link href="/contact/#quote-form" className="cta-quote">Get a Quote</Link>
+              <a href={SITE_PHONE_TEL} className="cta-phone">Call {SITE_PHONE_DISPLAY}</a>
             </div>
-            <div className="cta-side">
-              <p className="text-xl font-semibold text-wood">Free estimates</p>
-              <a href={SITE_PHONE_TEL} className="inline-block rounded-full bg-wood px-6 py-3 font-semibold text-[#120f0d]">Call {SITE_PHONE_DISPLAY}</a>
-            </div>
-          </div>
-          <div className="home-inner cta-links">
-            <Link href="/gallery" className="text-wood underline">View our portfolio</Link>
-            <Link href="/contact/#quote-form" className="text-wood underline">Get a consultation</Link>
+            <p className="cta-band-note">
+              <Link href="/gallery">View our portfolio</Link>
+            </p>
           </div>
         </section>
       </main>
