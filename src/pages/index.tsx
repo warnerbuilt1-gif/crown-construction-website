@@ -99,7 +99,7 @@ export default function Home() {
             <p className="services-eyebrow">What we build</p>
             <h2 id="services-heading">Work that holds up after we leave</h2>
             <p className="home-lead">
-              Foundations, slabs, and the site work around them for homeowners and builders in {SITE_SERVICE_AREA}.
+              Foundations, slabs, concrete demolition, septic installs, and the site work around them for homeowners and builders in {SITE_SERVICE_AREA}.
             </p>
             <p className="home-towns">
               {SERVICE_TOWNS.map((town, index) => (
@@ -130,7 +130,7 @@ export default function Home() {
                 {homeServices.map((service) => {
                   const photo = servicePhotos[service.title]
                   return (
-                    <article className="build-card" key={service.title}>
+                    <article className={`build-card${service.title === 'Concrete Demolition' || service.title === 'Septic Tank Installation' ? ' build-card-wide' : ''}`} key={service.title}>
                       {photo ? (
                         <div className="build-card-media">
                           <Image

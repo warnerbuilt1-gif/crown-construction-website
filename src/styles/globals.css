@@ -2500,7 +2500,15 @@ h2.text-3xl {
   }
 
   .build-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .build-card {
+    grid-column: span 2;
+  }
+
+  .build-card-wide {
+    grid-column: span 3;
   }
 
   .work-photo {
