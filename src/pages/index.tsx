@@ -8,7 +8,18 @@ import Hero from '../components/Hero'
 import Seo from '../components/Seo'
 import { PROJECTS, SERVICES, SERVICE_TOWNS, SITE_DESCRIPTION, SITE_OWNER, SITE_PHONE_DISPLAY, SITE_PHONE_TEL, SITE_SERVICE_AREA } from '../config/site'
 
-const homeServices = SERVICES.slice(0, 3)
+const homeServiceTitles = [
+  'Foundations & footings',
+  'Slabs & flatwork',
+  'Waterproofing & drainage',
+  'Concrete Demolition',
+  'Septic Tank Installation',
+] as const
+
+const homeServices = homeServiceTitles.flatMap((title) => {
+  const service = SERVICES.find((item) => item.title === title)
+  return service ? [service] : []
+})
 
 const servicePhotos: Record<string, { src: string; alt: string }> = {
   'Foundations & footings': {
@@ -22,6 +33,14 @@ const servicePhotos: Record<string, { src: string; alt: string }> = {
   'Waterproofing & drainage': {
     src: '/portfolio/waterproofing-detail.webp',
     alt: 'Waterproofing detail against a foundation wall',
+  },
+  'Concrete Demolition': {
+    src: '/portfolio/concrete-demo-hammer.webp',
+    alt: 'Hydraulic hammer breaking a concrete wall',
+  },
+  'Septic Tank Installation': {
+    src: '/portfolio/septic-tank-set.webp',
+    alt: 'Concrete septic tank set in an excavated hole',
   },
 }
 

@@ -105,6 +105,46 @@ export default function Gallery(){
       alt: 'Closer view of library clock pad area',
       caption: 'Closer finish detail around the clock plaza.'
     },
+    {
+      src: '/portfolio/concrete-demo-hammer.webp',
+      alt: 'Hydraulic hammer breaking a concrete wall',
+      caption: 'A hammer breaking out a concrete wall.'
+    },
+    {
+      src: '/portfolio/concrete-demo-pile.webp',
+      alt: 'Broken concrete sections piled on a lot',
+      caption: 'Broken concrete stacked after it was broken out.'
+    },
+    {
+      src: '/portfolio/concrete-demo-sections.webp',
+      alt: 'Closer view of broken concrete wall sections',
+      caption: 'Broken concrete sections on the lot.'
+    },
+    {
+      src: '/portfolio/concrete-demo-lot.webp',
+      alt: 'Broken concrete pieces on an open lot',
+      caption: 'Broken concrete left on the lot after the wall came out.'
+    },
+    {
+      src: '/portfolio/septic-excavation.webp',
+      alt: 'Excavator beside a deep hole dug in a field',
+      caption: 'The hole dug before the tank went in.'
+    },
+    {
+      src: '/portfolio/septic-trench.webp',
+      alt: 'Excavated trench with a white pipe and an excavator',
+      caption: 'Pipe laid in the trench toward the excavation.'
+    },
+    {
+      src: '/portfolio/septic-tank-lower.webp',
+      alt: 'Concrete septic tank being lowered into an excavated hole',
+      caption: 'The tank being lowered into the hole.'
+    },
+    {
+      src: '/portfolio/septic-tank-set.webp',
+      alt: 'Concrete septic tank set in an excavated hole',
+      caption: 'The tank set in the hole.'
+    },
   ]
 
   useEffect(() => {

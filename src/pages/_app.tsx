@@ -26,7 +26,7 @@ const serif = localFont({
   variable: '--font-serif',
   adjustFontFallback: 'Times New Roman',
 })
-import { GA4_ID, SITE_EMAIL, SITE_ESTABLISHED, SITE_NAME, SITE_OWNER, SITE_URL } from '../config/site'
+import { GA4_ID, SERVICES, SITE_EMAIL, SITE_ESTABLISHED, SITE_NAME, SITE_OWNER, SITE_URL } from '../config/site'
 
 const gaReady = GA4_ID !== '[GA4_ID_PLACEHOLDER]'
 
@@ -57,6 +57,18 @@ export default function App({ Component, pageProps }: AppProps) {
                 addressCountry: 'US',
               },
               areaServed: ['Anaconda', 'Butte', 'Southwest Montana'],
+              hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: 'Services',
+                itemListElement: SERVICES.map((service) => ({
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: service.title,
+                    description: service.description,
+                  },
+                })),
+              },
             }),
           }}
         />

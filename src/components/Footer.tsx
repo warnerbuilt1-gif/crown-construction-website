@@ -9,6 +9,7 @@ import {
   SITE_MAP_LINK,
   SITE_PHONE_DISPLAY,
   SITE_PHONE_TEL,
+  SITE_RENTALS_URL,
   SITE_SERVICE_AREA,
 } from '../config/site'
 
@@ -30,6 +31,9 @@ export default function Footer() {
           <div>
             <p className="footer-name">{SITE_LEGAL_NAME}</p>
             <p className="footer-line">Serving {SITE_SERVICE_AREA}.</p>
+            <p className="footer-rentals">
+              <a href={SITE_RENTALS_URL}>Need the machine? Crown Rentals</a>
+            </p>
           </div>
         </div>
 

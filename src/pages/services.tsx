@@ -100,7 +100,7 @@ export default function Services(){
     <>
       <Seo
         title={`Services | ${SITE_LEGAL_NAME}`}
-        description="Foundations and footings, slabs and flatwork, waterproofing and drainage, site prep and cleanup, and retaining and grade work from Crown Construction of Montana."
+        description="Foundations and footings, slabs and flatwork, waterproofing and drainage, site prep and cleanup, retaining and grade work, concrete demolition, and septic tank installation from Crown Construction of Montana."
         path="/services/"
       />
       <Header />

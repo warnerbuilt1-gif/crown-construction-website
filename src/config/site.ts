@@ -48,6 +48,16 @@ export const SERVICES = [
     description:
       'Cuts, backfill, and retaining layout on sloped Southwest Montana lots. We shape the ground so the foundation and the slab have somewhere solid to sit.',
   },
+  {
+    title: 'Concrete Demolition',
+    description:
+      'We break out and haul off old concrete (slabs, driveways, foundations, walls) to clear the site for what\'s next.',
+  },
+  {
+    title: 'Septic Tank Installation',
+    description:
+      'Excavation and septic tank installation, done to plan and inspection.',
+  },
 ] as const
 
 export const PROJECTS = [

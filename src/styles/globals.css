@@ -2624,6 +2624,21 @@ h2.text-3xl {
   line-height: 1.6;
 }
 
+.site-footer .footer-rentals {
+  margin: 0.85rem 0 0;
+}
+
+.site-footer .footer-rentals a {
+  color: var(--brass);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.site-footer .footer-rentals a:hover {
+  color: var(--bone);
+}
+
 .site-footer .footer-label {
   margin: 0 0 0.85rem;
   color: var(--brass);
